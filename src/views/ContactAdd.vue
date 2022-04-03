@@ -7,7 +7,7 @@
         type="email"
         class="form-control"
         id="exampleFormControlInput1"
-        placeholder="Nguyễn Lê Anh Khoa"
+        placeholder="Nguyễn Văn Lái"
       />
     </div>
     <div class="form-group">
