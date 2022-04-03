@@ -1,57 +1,56 @@
 <template>
-    <div class="page row">
-        <div class="col-md-10">
-            <InputSearch v-model="searchText" />
-        </div>
-        <div class="mt-3 col-md-6">
-            <h4>
-                Danh bạ
-                <i class="fas fa-address-book"></i>
-            </h4>
-            <ContactList
-                v-if="contactCount > 0"
-                :contacts="filteredContacts"
-                v-model:activeIndex="activeIndex"
-            />
-            <p v-else>Không có liên hệ nào.</p>
-
-            <div class="mt-3 row justify-content-around align-items-center">
-                <button class="btn btn-sm btn-primary" @click="refreshList">
-                    <i class="fas fa-redo"></i> Làm mới
-                </button>
-
-                <button class="btn btn-sm btn-success" @click="goToAddContact">
-                    <i class="fas fa-plus"></i> Thêm mới
-                </button>
-
-                <button
-                    class="btn btn-sm btn-danger"
-                    @click="removeAllContacts"
-                >
-                    <i class="fas fa-trash"></i> Xóa tất cả
-                </button>
-            </div>
-        </div>
-        <div class="mt-3 col-md-6">
-            <div v-if="activeContact">
-                <h4>
-                    Chi tiết Liên hệ
-                    <i class="fas fa-address-card"></i>
-                </h4>
-                <ContactCard :contact="activeContact" 
-                />
-                <router-link
-                    :to="{
-                        name: 'EditContact',
-                        params: { id: activeContact.id },
-                    }"
-                >
-                    <span class="mt-2 badge badge-warning">
-                        <i class="fas fa-edit"></i> Hiệu chỉnh</span>
-                </router-link>
-            </div>
-        </div>
+  <form>
+    <h1>Thêm liên hệ</h1>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Tên</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Nguyễn Lê Anh Khoa"
+      />
     </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="nguyenvanlai220301@gmail.com"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Địa chỉ</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Cần Thơ"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Số điện thoại</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="0869115261"
+      />
+    </div>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        value=""
+        id="defaultCheck1"
+      />
+      <label class="form-check-label" for="defaultCheck1">
+        <b> Liên hệ yêu thích</b>
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary mr-3">Lưu</button>
+    <button type="submit" class="btn btn-danger">Hủy</button>
+  </form>
 </template>
 
 <script>
